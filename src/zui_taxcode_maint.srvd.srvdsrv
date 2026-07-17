@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - Tax Code'
+define service ZUI_TAXCODE_MAINT {
+  expose zc_taxcode_maint as TaxCode;
+}

@@ -1,0 +1,34 @@
+managed implementation in class zbp_t_r_mapwt unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZT_R_MAPCTA alias WtMap
+persistent table ztab_cta_map
+draft table ztab_cta_d
+lock master total etag last_changed_at
+authorization master ( global )
+etag master last_changed_at
+{
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  field ( readonly : update ) account_from;
+  field ( readonly ) last_changed_at;
+
+  mapping for ztab_cta_map
+  {
+    account_from     = account_from;
+    account_to       = account_to;
+    tipo_ret         = tipo_ret;
+    tipo_b_s          = tipo_b_s;
+    descripcion     = descripcion;
+    last_changed_at   = last_changed_at;
+  }
+}

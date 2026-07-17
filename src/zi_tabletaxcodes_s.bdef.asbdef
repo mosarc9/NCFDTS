@@ -1,0 +1,102 @@
+managed with additional save implementation in class ZBP_I_TABLETAXCODES_S unique;
+strict;
+with draft;
+define behavior for ZI_TableTaxCodes_S alias TableTaxCodesAll
+draft table ZTAB_MAP_TC_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( features : instance )
+   TransportRequestID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit with additional implementation;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _TableTaxCodes { create ( features : instance ); with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT
+  {
+    create;
+    update;
+  }
+
+  side effects
+  {
+    action SelectCustomizingTransptReq affects
+        $self;
+  }
+
+}
+
+define behavior for ZI_TableTaxCodes alias TableTaxCodes ##UNMAPPED_FIELD
+persistent table ZTAB_MAP_TC
+draft table ZTAB_MAP_TC_D
+etag master LocalLastChangedAt
+lock dependent by _TableTaxCodesAll
+authorization dependent by _TableTaxCodesAll
+{
+  field ( mandatory : create )
+   TaxCode;
+
+  field ( readonly )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   TaxCode;
+
+  field ( notrigger )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZTAB_MAP_TC
+  {
+    TaxCode = TAX_CODE;
+    TipoTasa = TIPO_TASA;
+    Description = DESCRIPTION;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+  association _TableTaxCodesAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT
+  {
+    create;
+    update;
+    delete;
+  }
+
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Reporte 608 NCFs Anulados'
+define service ZNCF_ANULADOS608_SRV {
+  expose ZCE_NCF_ANULADOS608 as Ncf608Anulados;
+}

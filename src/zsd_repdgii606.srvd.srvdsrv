@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition - Rep DGII 606'
+define service ZSD_REPDGII606 {
+  expose ZT_C_H606 as DgiiHeader;
+  expose ZT_C_D606 as DgiiDetail;
+}

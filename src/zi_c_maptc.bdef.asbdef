@@ -1,0 +1,9 @@
+projection;
+strict ( 2 );
+
+define behavior for ZI_C_MAPTC alias TcMap
+{
+  use create;
+  use update;
+  use delete;
+}

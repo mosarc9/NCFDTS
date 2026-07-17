@@ -1,0 +1,48 @@
+managed implementation in class zbp_t_r_paymt606 unique;
+strict ( 2 );
+with draft;
+
+
+define behavior for ZT_R_PAYMT606 alias pay606
+persistent table zpaymt_606
+draft table zpaymt_606_d
+lock master
+total etag LastChangedAt
+etag master LocalLastChangedAt
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly, numbering : managed ) Uuid;
+  field (mandatory) Paykey, Paymt;
+
+
+  validation ValidPayKey on save { create; field Paykey; }
+  validation ValidPayMt on save { create; field Paymt; }
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume with additional implementation;
+
+  draft determine action Prepare
+  {
+    validation ValidPayKey;
+    validation ValidPayMt;
+  }
+
+
+  mapping for zpaymt_606
+    {
+      Uuid               = uuid;
+      Paykey             = paykey;
+      Paymt              = paymt;
+      LocalCreatedBy     = local_created_by;
+      LocalCreatedAt     = local_created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+}

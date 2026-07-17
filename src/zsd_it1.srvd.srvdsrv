@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition - IT-1'
+define service ZSD_IT1 {
+  expose ZCE_IT1_MAIN    as IT1;
+  expose zi_company_code as CompanyCode;
+}

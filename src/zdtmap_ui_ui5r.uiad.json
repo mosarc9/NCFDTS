@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Mapeo Tipos Documento - Informe 606/607",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Tipos de Documentos"
+  },
+  "ui5AppDetails": {
+    "appId": "zdtmap"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_AD5EE5CC4861509EFB6B3BBC788E5C94800ED8F7_TM",
+    "semanticObject": "ZDtMap",
+    "action": "maintain",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_AD5EE5CC4861509EFB6B3BBC788E5C94800ED8F7_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Tipos de Documentos"
+      }
+    }
+  ]
+}

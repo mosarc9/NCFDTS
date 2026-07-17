@@ -1,0 +1,43 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo: {
+  typeName: 'IT-1',
+  typeNamePlural: 'IT-1 DGII',
+  title: { value: 'casilla', type: #STANDARD }
+}
+annotate entity ZCE_IT1_MAIN with
+{
+
+  @UI.selectionField: [{ position: 10 }]
+  @UI.lineItem: [{ exclude: true }]
+  @UI.identification: [{ exclude: true }]
+  periodo;
+
+  @Consumption.valueHelpDefinition: [{
+    entity: { name: 'zi_company_code', element: 'CompanyCode' },
+    label: 'Sociedad'
+  }]
+  @UI.selectionField: [{ position: 20 }]
+  @UI.lineItem: [{ exclude: true }]
+  @UI.identification: [{ exclude: true }]
+  bukrs;
+
+  @UI.lineItem: [{ position: 10, label: 'No.', importance: #HIGH }]
+  @UI.identification: [{ position: 10 }]
+  casilla;
+
+  @UI.lineItem: [{ position: 20, label: 'Sección', importance: #MEDIUM }]
+  seccion;
+
+  @UI.lineItem: [{ position: 30, label: 'Descripción', importance: #HIGH }]
+  descripcion;
+
+  @UI.lineItem: [{ position: 40, label: 'Op.', importance: #LOW }]
+  operacion;
+
+  @UI.lineItem: [{
+    position: 50,
+    label: 'Monto (DOP)',
+    importance: #HIGH
+  }]
+  monto;
+}

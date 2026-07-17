@@ -1,0 +1,16 @@
+unmanaged implementation in class ZCL_NCF_ANULADOS608_BIMPL  unique;
+
+
+//strict ( 2 );
+
+define behavior for ZCE_NCF_ANULADOS608 //alias <alias_name>
+//lock master
+//authorization master ( global )
+{
+
+  field ( readonly ) belnr;
+
+  static action DescargarArchivo608
+    parameter ZA_NCF608_PARAM
+    result [1] ZA_NCF608_RESULT;
+}

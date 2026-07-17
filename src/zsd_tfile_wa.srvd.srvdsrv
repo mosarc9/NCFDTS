@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Definition - Txt File Web API'
+@AbapCatalog.extensibility.extensible: true
+define service ZSD_TFILE_WA
+  provider contracts odata_v4_webapi {
+  expose ZT_C_TXTFILE as TFileWA;
+}

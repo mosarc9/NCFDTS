@@ -1,0 +1,32 @@
+managed implementation in class zbp_t_r_mapdt unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZT_R_MAPDT alias DtMap
+persistent table ztab_dt_map
+draft table ztab_dt_d
+lock master total etag last_changed_at
+authorization master ( global )
+etag master last_changed_at
+{
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  field ( readonly : update ) doc_type;
+  field ( readonly ) last_changed_at;
+
+  mapping for ztab_dt_map
+  {
+    doc_type        = doc_type;
+    cod_inf         = cod_inf;
+    descripcion     = descripcion;
+    last_changed_at = last_changed_at;
+  }
+}

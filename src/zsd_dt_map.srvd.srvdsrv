@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - Doc Types'
+define service ZSD_DT_MAP {
+  expose ZI_C_MAPDT as DocTypeMap;
+}

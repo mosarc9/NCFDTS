@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Clase de documentos por Tipo de NCF",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Clase de documentos por Tipo de NCF"
+  },
+  "ui5AppDetails": {
+    "appId": "cl_doc_x_ncf"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_23FC927785990608926FBBEFD90D009CEADD9FA0_TM",
+    "semanticObject": "ZCLDOCXNCF",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_23FC927785990608926FBBEFD90D009CEADD9FA0_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Clase de documentos por Tipo de NCF"
+      }
+    }
+  ]
+}

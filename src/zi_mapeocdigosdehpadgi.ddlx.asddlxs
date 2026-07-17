@@ -1,0 +1,49 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'MapeoCDigosDeHpADgi', 
+    typeNamePlural: 'MapeoCDigosDeHpADgis', 
+    title: {
+      type: #STANDARD, 
+      label: 'Mapeo Códigos de  HP a DGII', 
+      value: 'CustomCode'
+    }
+  }
+}
+annotate view ZI_MapeoCDigosDeHpADgi with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_MapeoCDigosDeHpADgi', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Mapeo Códigos de  HP a DGII', 
+    position: 1 
+  } ]
+  CustomCode;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'DgiiCode'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'DgiiCode'
+  } ]
+  DgiiCode;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Description'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Description'
+  } ]
+  Description;
+}

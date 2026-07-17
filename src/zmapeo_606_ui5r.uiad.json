@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Mapeo 606",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Mapeo 606"
+  },
+  "ui5AppDetails": {
+    "appId": "mapeo_606"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_743318487911BF64AC0FE3A9C8D5769251BE4BDF_TM",
+    "semanticObject": "ZMAPEO_606",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_743318487911BF64AC0FE3A9C8D5769251BE4BDF_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Mapeo 606"
+      }
+    }
+  ]
+}

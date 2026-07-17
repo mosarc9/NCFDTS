@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - IR17'
+define service ZSD_IR17 {
+  expose ZCE_IR17 as IR17;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - GL Accounts'
+define service ZSD_CTA_MAP {
+  expose ZI_C_MAPCTA as CtaMap;
+}

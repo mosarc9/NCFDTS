@@ -1,0 +1,41 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Maintain Table - Tax Codes",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "ZUI_TABLETAXCODES_O4",
+    "serviceName": "ZUI_TABLETAXCODES_O4",
+    "serviceVersion": "0001",
+    "rootEntitySet": "TableTaxCodesAll",
+    "name": "Table - Tax Codes",
+    "transportObject": "ZTABLETAXCODEST",
+    "configurationGroup": "",
+    "skipRootEntity": true,
+    "enableFileUpload": false
+  },
+  "appConfiguration": {
+    "listReport": {},
+    "objectPages": [
+      {
+        "entitySet": "TableTaxCodesAll",
+        "variantManagement": "control",
+        "showTransportSelectionStrip": true
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "TableTaxCodes",
+        "tableType": "gridTable",
+        "selectAll": true,
+        "rowCountMode": "auto",
+        "frozenColumnCount": 1,
+        "creationModeName": "inlineCreationRows",
+        "createAtEnd": true,
+        "widthIncludingColumnHeader": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+managed implementation in class zbp_t_r_conf_ncf unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZT_R_CONF_NCF alias configNCF
+persistent table zconfi_ncf
+draft table zconfi_ncf_d
+lock master
+total etag LastChangedAt
+etag master LocalLastChangedAt
+authorization master ( instance, global )
+//etag master <field_name>
+{
+
+  create ( authorization : global );
+  update ( precheck );
+  delete;
+
+  field ( readonly, numbering : managed ) IdUuid;
+  field ( readonly ) LocalCreatedAt, LocalCreatedBy, LocalLastChangedAt, LocalLastChangedBy;
+  field ( mandatory ) Bukrs, ClDoc, Modulo;
+
+  validation validateBukrs on save { create; field Bukrs; }
+  validation validatePlant on save { create; field Plant; }
+  validation validateClDoc on save { create; field ClDoc; }
+  validation validateModule on save { create; field Modulo; }
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume with additional implementation;
+
+  draft determine action Prepare
+  {
+    validation validateBukrs;
+    validation validatePlant;
+    validation validateClDoc;
+    validation validateModule;
+  }
+
+  mapping for zconfi_ncf
+    {
+      IdUuid             = id_uuid;
+      bukrs              = bukrs;
+      Plant              = werks;
+      ClDoc              = cl_doc;
+      modulo             = modulo;
+      stcdc              = stcdc;
+      Serie              = serie;
+      znrnr              = znrnr;
+      IsDpp              = is_dpp;
+      LocalCreatedBy     = local_created_by;
+      LocalCreatedAt     = local_created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+
+}

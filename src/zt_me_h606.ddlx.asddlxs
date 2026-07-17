@@ -1,0 +1,36 @@
+@Metadata.layer: #CORE
+@UI:{
+        headerInfo: { typeName      : 'DGII 606',
+                      typeNamePlural: 'DGII 606',
+                      title         : { type: #STANDARD, label: 'Company Code', value: 'CompanyCode'},
+                      description   : { type: #STANDARD, label: 'Company'     , value: 'CompanyCodeName'}
+                     },
+       presentationVariant: [{ sortOrder: [{ by: 'CompanyCode',direction: #ASC }, { by: 'FiscalYear',direction: #DESC }],
+                               visualizations: [{ type: #AS_LINEITEM }] }] 
+     }
+annotate entity ZT_C_H606 with
+{
+  @UI.facet: [{ id: 'dgii'   , position: 10, label: 'DGII 606'      , type: #IDENTIFICATION_REFERENCE },
+              { id: 'dgiidet', position: 20, label: 'DGII 606 Items', type: #LINEITEM_REFERENCE, targetElement: '_Items' }]
+
+  @UI: { lineItem      : [{ position: 10, importance: #HIGH}],
+         //identification: [{ position: 10, importance: #HIGH }],
+         selectionField: [{ position: 10 }] }
+  CompanyCode;
+  @UI: { lineItem      : [{ position: 20, importance: #HIGH}],
+         identification: [{ position: 20, importance: #HIGH }],
+         selectionField: [{ position: 20 }] }
+  FiscalYear;
+  @UI: { lineItem      : [{ position: 30, importance: #HIGH}],
+         identification: [{ position: 30, importance: #HIGH }],
+         selectionField: [{ position: 30 }] }
+  @EndUserText.label: 'Período Fiscal'
+  FMonth;
+  @UI.hidden: true
+  Periodo;
+
+
+  //  /* Associations */
+  //  _Items;
+
+}

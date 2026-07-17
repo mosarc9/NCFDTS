@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - FIRNCNCF'
+define service ZSD_FIRNCNCF {
+  expose ZT_C_FIRNCNCF as firncncf;
+}

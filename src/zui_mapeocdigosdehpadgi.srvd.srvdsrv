@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_MapeoCDigosDeHpADgi_S'
+define service ZUI_MAPEOCDIGOSDEHPADGI {
+  expose ZI_MAPEOCDIGOSDEHPADGI_S as MapeoCDigosDeHpAAll;
+  expose ZI_MAPEOCDIGOSDEHPADGI as MapeoCDigosDeHpADgi;
+}

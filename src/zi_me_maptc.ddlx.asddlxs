@@ -1,0 +1,43 @@
+@Metadata.layer: #CORE
+annotate entity ZI_C_MAPTC
+    with 
+{
+      @UI.facet: [{id: 'Map',
+               position: 10,
+               label: 'Mapping 606',
+               type: #IDENTIFICATION_REFERENCE}]
+
+      @UI.hidden: true
+      Uuid;
+    
+      @UI: { lineItem: [{ position: 10, importance:  #HIGH}],
+             identification: [{ position: 10 }],
+             selectionField: [{ position: 10 }]  }
+      TaxCode;
+    
+      @UI: { lineItem: [{ position: 20, importance:  #HIGH}],
+             identification: [{ position: 20 }],
+             selectionField: [{ position: 20 }]  }
+      TipoTasa;
+      
+      @UI: { lineItem: [{ position: 30, importance:  #HIGH}],
+             identification: [{ position: 30 }],
+             selectionField: [{ position: 30 }]  }
+      Descripcion;
+    
+      @UI.hidden: true
+      LocalCreatedBy;
+    
+      @UI.hidden: true
+      LocalCreatedAt;
+    
+      @UI.hidden: true
+      LocalLastChangedBy;
+    
+      @UI.hidden: true
+      LocalLastChangedAt;
+    
+      @UI.hidden: true
+      LastChangedAt;
+    
+}

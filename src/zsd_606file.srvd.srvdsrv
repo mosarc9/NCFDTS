@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - 606 File Download'
+define service ZSD_606FILE {
+  expose ZT_C_606FILE as d606File;
+}

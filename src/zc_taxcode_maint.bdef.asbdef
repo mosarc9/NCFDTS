@@ -1,0 +1,17 @@
+projection;
+strict ( 2 );
+use draft;                          //← ⚠️ AÑADIR ESTA LÍNEA
+
+define behavior for zc_taxcode_maint alias TaxCode
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;                             //← ⚠️ AÑADIR
+  use action Activate;                         //← ⚠️ AÑADIR
+  use action Discard;                          //← ⚠️ AÑADIR
+  use action Resume;                           //← ⚠️ AÑADIR
+  use action Prepare;                          //← ⚠️ AÑADIR
+}

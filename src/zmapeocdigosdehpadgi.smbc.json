@@ -1,0 +1,41 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Maintain Mapeo Códigos de  HP a DGII",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "ZUI_MAPEOCDIGOSDEHPADGI_O4",
+    "serviceName": "ZUI_MAPEOCDIGOSDEHPADGI_O4",
+    "serviceVersion": "0001",
+    "rootEntitySet": "MapeoCDigosDeHpAAll",
+    "name": "Mapeo Códigos de  HP a DGII",
+    "transportObject": "ZMAPEOCDIGOSDEHPADGIT",
+    "configurationGroup": "",
+    "skipRootEntity": true,
+    "enableFileUpload": false
+  },
+  "appConfiguration": {
+    "listReport": {},
+    "objectPages": [
+      {
+        "entitySet": "MapeoCDigosDeHpAAll",
+        "variantManagement": "control",
+        "showTransportSelectionStrip": true
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "MapeoCDigosDeHpADgi",
+        "tableType": "gridTable",
+        "selectAll": true,
+        "rowCountMode": "auto",
+        "frozenColumnCount": 1,
+        "creationModeName": "inlineCreationRows",
+        "createAtEnd": true,
+        "widthIncludingColumnHeader": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Mantenimiento Tasa ITBIS",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Mantenimiento Tasa ITBIS"
+  },
+  "ui5AppDetails": {
+    "appId": "ztaxcode"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_4B80223CB05CE9B533DF7B7D9F1B569EDD357AD5_TM",
+    "semanticObject": "ZTaxCode",
+    "action": "maintain",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_4B80223CB05CE9B533DF7B7D9F1B569EDD357AD5_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Mantenimiento Tasa ITBIS"
+      }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>Z_NCF_MC</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>NCF Message Class</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>Z_NCF_MC</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Enter a Company Code</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>Z_NCF_MC</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Company code &amp;1 is not valid</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>Z_NCF_MC</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Enter a Plant</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>Z_NCF_MC</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Plant code &amp;1 is not valid</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>Z_NCF_MC</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Attachment not registered</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>Z_NCF_MC</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>The value for the Header Text does not comply with the NCF validation</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>Z_NCF_MC</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Enter a Document Type</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>Z_NCF_MC</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Enter a Module</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

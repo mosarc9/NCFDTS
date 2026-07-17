@@ -1,0 +1,44 @@
+managed implementation in class zbp_t_r_isr606 unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZT_R_ISR606 alias isr606
+persistent table zisr_606
+draft table zisr_606_d
+lock master
+total etag LastChangedAt
+etag master LocalLastChangedAt
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly, numbering : managed ) Uuid;
+  field ( mandatory ) Taxcode;
+
+  validation ValidTaxCode on save { create; field Taxcode; }
+  validation ValidIsrTtpe on save { create; field Isrtype; }
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume with additional implementation;
+
+  draft determine action Prepare
+  {
+    validation ValidTaxCode;
+    validation ValidIsrTtpe;
+  }
+  mapping for zisr_606
+    {
+      Uuid               = uuid;
+      Taxcode            = isrcode;
+      Isrtype            = isrtype;
+      LocalCreatedBy     = local_created_by;
+      LocalCreatedAt     = local_created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+}

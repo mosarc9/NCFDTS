@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Reporte 608 NCFs Anulados",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Reporte 608 - NCFs Anulados"
+  },
+  "ui5AppDetails": {
+    "appId": "zncf608anulados"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_17F3578386E2B22BA6B990D4726A66630A9EC123_TM",
+    "semanticObject": "Ncf608Anulados",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_17F3578386E2B22BA6B990D4726A66630A9EC123_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Reporte 608 - NCFs Anulados"
+      }
+    }
+  ]
+}

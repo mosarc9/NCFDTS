@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Tipo de Retensión ISR",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Tipo de Retensión ISR"
+  },
+  "ui5AppDetails": {
+    "appId": "isr_606"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_6F0141BEFE036EE598B3D1E58FE53C58D60C1CC5_TM",
+    "semanticObject": "ZISR606",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_6F0141BEFE036EE598B3D1E58FE53C58D60C1CC5_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Tipo de Retensión ISR"
+      }
+    }
+  ]
+}

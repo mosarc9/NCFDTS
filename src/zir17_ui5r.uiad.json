@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Reporte IR-17 DGII",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Reporte IR-17"
+  },
+  "ui5AppDetails": {
+    "appId": "zir17"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_DBBDCF6416009FB65855E2974AE1F84CF4CD9CD6_TM",
+    "semanticObject": "IR17",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_DBBDCF6416009FB65855E2974AE1F84CF4CD9CD6_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Reporte IR-17"
+      }
+    }
+  ]
+}

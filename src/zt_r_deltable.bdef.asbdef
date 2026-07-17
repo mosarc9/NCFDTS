@@ -1,0 +1,28 @@
+unmanaged implementation in class zbp_t_r_deltable unique;
+strict ( 2 );
+
+define behavior for ZT_R_DELTABLE //alias <alias_name>
+//persistent table ztfirncncf_e
+lock master
+authorization master ( global )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) IdUuid;
+
+  // Unbound Action: borrado total de la tabla
+  static action DeleteAll;
+
+   mapping for ztfirncncf_e
+    {
+      IdUuid             = id_uuid;
+      Rcn                = rcn;
+      NombreComercial    = nombre_comercial;
+      Prefijo            = prefijo;
+      ValidoHasta        = valido_hasta;
+      Ncfini             = ncfini;
+      Ncffin             = ncffin;
+    }
+}

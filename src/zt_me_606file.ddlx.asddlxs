@@ -1,0 +1,66 @@
+@Metadata.layer: #CORE
+
+@UI:{ headerInfo: {
+                    typeName: '606 File',
+                    typeNamePlural: '606 Files',
+                    title: {
+                            type: #STANDARD,
+                            label: 'Fiscal Year',
+                            value: 'Gjahr'},
+                   description: {
+                            type: #STANDARD,
+                            label: 'Period',
+                             value: 'Monat'}
+                  
+                  }
+     }
+annotate entity ZT_C_606FILE with
+{
+  @UI.facet: [{
+                id: 'File',
+                position: 10,
+                label: '606 File Download',
+                type: #IDENTIFICATION_REFERENCE
+             }]
+
+  @UI.hidden: true
+  Uuid;
+  @UI: { identification: [{ position: 10, importance:  #HIGH}, { type: #FOR_ACTION, dataAction: 'downloadTxt', label: 'Download Txt' }], 
+         lineItem:       [{ position: 10, importance:  #HIGH}, { type: #FOR_ACTION, dataAction: 'downloadTxt', label: 'Download Txt' }],
+         selectionField: [{ position: 10 }] }
+  Gjahr;
+  @UI: { identification: [{ position: 20, importance:  #HIGH }],
+         lineItem:       [{ position: 20, importance:  #HIGH}],
+         selectionField: [{ position: 20 }]}
+  Monat;
+
+  @UI: { identification: [{ position: 30, importance:  #HIGH }],
+         lineItem:       [{ position: 30, importance:  #HIGH}]}
+  Attachment;
+  @UI: { identification: [{ position: 40, importance:  #MEDIUM }],
+         lineItem:       [{ position: 40, importance:  #MEDIUM}]}
+  Filename;
+//  @UI: { identification: [{ position: 50, importance:  #MEDIUM }],
+//         lineItem:       [{ position: 50, importance:  #MEDIUM}]}
+  @UI.hidden: true
+  Mimetype;
+  @UI: { identification: [{ position: 60, importance:  #MEDIUM}],
+         lineItem:       [{ position: 60, importance:  #MEDIUM}]}
+  LocalCreatedBy;
+  @UI: { identification: [{ position: 70, importance:  #MEDIUM }],
+         lineItem:       [{ position: 70, importance:  #MEDIUM}]}
+  LocalCreatedAt;
+  
+  //  @UI: { identification: [{ position: 60 }],
+  //         lineItem:       [{ position: 80, importance:  #MEDIUM}]}
+  @UI.hidden: true
+  LocalLastChangedBy;
+  //  @UI: { identification: [{ position: 70 }],
+  //         lineItem:       [{ position: 90, importance:  #MEDIUM}]}
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+}

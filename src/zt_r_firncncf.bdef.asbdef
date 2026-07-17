@@ -1,0 +1,53 @@
+managed implementation in class zbp_t_r_firncncf unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZT_R_FIRNCNCF alias firncncf
+persistent table ztfirncncf_e
+draft table ztfirncncf_e_d
+
+lock master
+total etag LastChangedAt
+etag master LocalLastChangedAt
+
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update ( precheck );
+  delete;
+  field ( readonly, numbering : managed ) IdUuid;
+  field ( readonly ) LastChangedAt, LocalCreatedAt, LocalCreatedBy, LocalLastChangedAt, LocalLastChangedBy;
+  field ( mandatory ) Rcn, Prefijo, NombreComercial, ValidoHasta, Ncfini, Ncffin;
+
+  validation validateRcn on save { create; field Rcn; }
+
+  action(features : global) uploadTxt parameter Z_A_TXTDATA;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume with additional implementation;
+
+  draft determine action Prepare
+  {
+    validation validateRcn;
+
+  }
+
+  mapping for ztfirncncf_e
+    {
+      IdUuid             = id_uuid;
+      Rcn                = rcn;
+      NombreComercial    = nombre_comercial;
+      Prefijo            = prefijo;
+      ValidoHasta        = valido_hasta;
+      Ncfini             = ncfini;
+      Ncffin             = ncffin;
+      LocalCreatedBy     = local_created_by;
+      LocalCreatedAt     = local_created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+}

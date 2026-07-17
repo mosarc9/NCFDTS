@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SIA6" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SIA6>
+    <MAIN_OBJECT>
+     <NAME>ZRET609_APP_EXT</NAME>
+     <TYPE>SIA6</TYPE>
+     <DESCRIPTION>Reporte de Retenciones (609)</DESCRIPTION>
+     <RESPONSIBLE>CB9980000021</RESPONSIBLE>
+     <MASTER_LANGUAGE>EN</MASTER_LANGUAGE>
+     <MASTER_SYSTEM>Z0S</MASTER_SYSTEM>
+     <PACKAGE_REF>
+      <PACKAGE_NAME>ZENCF</PACKAGE_NAME>
+     </PACKAGE_REF>
+     <ABAP_LANGU_VERSION>5</ABAP_LANGU_VERSION>
+    </MAIN_OBJECT>
+    <APP_ID>ZRET609_APP_EXT</APP_ID>
+    <APP_TYPE>EXT</APP_TYPE>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+    <UI_APP_ID>ZRET609_UI5R</UI_APP_ID>
+    <SERVICE>
+     <item>
+      <REL_NAME>ZRET609_SRV_BIND</REL_NAME>
+      <REL_TYPE>G4BA</REL_TYPE>
+      <APP_ID>ZRET609_APP_EXT</APP_ID>
+      <SRVC_NAME>E394A549D38B4D0EBF1CEB091B73BA</SRVC_NAME>
+      <SRVC_TYPE>HT</SRVC_TYPE>
+      <UIAD_SRC>ZRET609_UI5R</UIAD_SRC>
+      <TEXT>Service Binding - 609 Report</TEXT>
+      <TYPE_TEXT>OData V4</TYPE_TEXT>
+     </item>
+     <item>
+      <REL_NAME>ZRET609_HTTP</REL_NAME>
+      <REL_TYPE>HTTP</REL_TYPE>
+      <APP_ID>ZRET609_APP_EXT</APP_ID>
+      <SRVC_NAME>C21D4F522FB7C34620AC51086DDBD8</SRVC_NAME>
+      <SRVC_TYPE>HT</SRVC_TYPE>
+      <TEXT>Download 609 Retenciones</TEXT>
+      <TYPE_TEXT>HTTP Service</TYPE_TEXT>
+     </item>
+    </SERVICE>
+    <PUBLISH_STATUS>p</PUBLISH_STATUS>
+   </SIA6>
+  </asx:values>
+ </asx:abap>
+</abapGit>

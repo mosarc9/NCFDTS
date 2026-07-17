@@ -1,0 +1,34 @@
+@Metadata.layer: #CORE
+
+@UI:{ headerInfo: {
+                    typeName: 'DGII Type',
+                    typeNamePlural: 'DGII Type'}
+     }
+annotate entity ZT_C_DGII_TYPE with
+{
+    @UI.facet: [{id: 'dgii',
+              position: 10,
+              label: 'DGII Type',
+              type: #IDENTIFICATION_REFERENCE}]
+              
+  @UI.hidden: true
+  Uuid;
+  @UI: { lineItem: [{  position:  10, importance:  #HIGH}],
+       identification: [{ position: 10 }],
+       selectionField: [{ position: 10 }] }
+  Dgiitype;
+  @UI: { lineItem: [{  position:  20, importance:  #HIGH}],
+       identification: [{ position: 20 }],
+       selectionField: [{ position: 20 }] }
+  Descr;
+  @UI.adaptationHidden: true
+  LocalCreatedBy;
+  @UI.adaptationHidden: true
+  LocalCreatedAt;
+  @UI.adaptationHidden: true
+  LocalLastChangedBy;
+  @UI.adaptationHidden: true
+  LocalLastChangedAt;
+  @UI.adaptationHidden: true
+  LastChangedAt;
+}

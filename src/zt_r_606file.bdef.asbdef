@@ -1,0 +1,67 @@
+managed implementation in class zbp_t_r_606file unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZT_R_606FILE alias e606file
+persistent table z606file
+draft table z606file_d
+
+lock master
+total etag LastChangedAt
+etag master LocalLastChangedAt
+
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update ( features : instance );
+  delete;
+
+  field ( readonly, numbering : managed ) Uuid;
+  field ( readonly ) Filename, Mimetype, LocalCreatedAt, LocalCreatedBy, LocalLastChangedAt, LocalLastChangedBy, LastChangedAt;
+//////  field ( mandatory ) Gjahr, Monat;
+
+  validation validateYear on save { create; field Gjahr; }
+  validation validateMonth on save { create; field Monat; }
+  validation validatePeriod on save { create; field Gjahr, Monat; }
+
+  action ( features : instance, authorization : update ) downloadTxt result [1] $self;
+
+  determine action validateyearID   { validation validateYear; }
+  determine action validateMonthID  { validation validateMonth; }
+  determine action validatePeriodID { validation validatePeriod; }
+
+  side effects
+  {
+    determine action validateyearID   executed on field Gjahr affects messages;
+    determine action validateMonthID  executed on field Monat affects messages;
+    determine action validatePeriodID executed on field Gjahr, field Monat affects messages;
+  }
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume with additional implementation;
+
+  draft determine action Prepare
+  {
+    validation validateYear;
+    validation validateMonth;
+    validation validatePeriod;
+  }
+
+  mapping for z606file
+    {
+      Uuid               = uuid;
+      Gjahr              = gjahr;
+      Monat              = monat;
+      Attachment         = attachment;
+      Filename           = filename;
+      Mimetype           = mimetype;
+      LocalCreatedBy     = local_created_by;
+      LocalCreatedAt     = local_created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+}

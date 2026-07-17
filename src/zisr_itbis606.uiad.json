@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Retenciones ISR/ITBIS",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_ALV5_DEFAULT",
+    "information": "Retenciones ISR/ITBIS",
+    "targetMappingTitle": "Retenciones ISR/ITBIS"
+  },
+  "ui5AppDetails": {
+    "appId": "isr_606"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_6F0141BEFE036EE598B3D1E58FE53C58D60C1CC5_TM",
+    "semanticObject": "ZISR606",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_6237CA338AC525950E0C5FDAD8931CBC98F16549_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Retenciones ISR/ITBIS"
+      }
+    }
+  ]
+}

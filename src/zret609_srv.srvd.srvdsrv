@@ -1,0 +1,4 @@
+@EndUserText.label: 'Reporte de Retenciones (609)'
+define service ZRET609_SRV {
+  expose ZCE_RET609 as Ret609;
+}

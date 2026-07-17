@@ -1,0 +1,53 @@
+@Metadata.layer: #CORE
+
+@UI:{ headerInfo: {
+                    typeName: 'Txt File',
+                    typeNamePlural: 'Txt File'
+                  }
+     }
+annotate entity ZT_C_TXTFILE with
+{
+  @UI.facet: [{
+                id: 'txtFile',
+                position: 10,
+                label: 'Txt File',
+
+                type: #IDENTIFICATION_REFERENCE
+             }]
+  @UI.hidden: true
+  Id;
+
+  @UI: { identification: [{ position: 10 }],
+       lineItem: [{  position:  10, importance:  #HIGH}]}
+  Attachment;
+
+  @UI: {
+//        identification: [{ position: 11 }],
+        lineItem: [{  position:  20, importance:  #HIGH}]}
+  Filename;
+
+  @UI: {
+//        identification: [{ position: 12 }],
+        lineItem: [{  position:  30, importance:  #HIGH}]}
+  Mimetype;
+
+  @UI: { identification: [{ position: 20 }],
+     lineItem: [{  position:  40, importance:  #HIGH}]}
+  LocalCreatedBy;
+
+  @UI: { identification: [{ position:30 }],
+     lineItem: [{  position:  50, importance:  #HIGH}]}
+  LocalCreatedAt;
+
+  @UI: { identification: [{ position: 40 }],
+     lineItem: [{  position:  60, importance:  #MEDIUM}]}
+  LocalLastChangedBy;
+
+  @UI: { identification: [{ position: 50 }],
+     lineItem: [{  position:  70, importance:  #MEDIUM}]}
+  LocalLastChangedAt;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+}

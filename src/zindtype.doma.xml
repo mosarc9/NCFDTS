@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOMA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD01V>
+    <DOMNAME>ZINDTYPE</DOMNAME>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DATATYPE>NUMC</DATATYPE>
+    <LENG>000002</LENG>
+    <OUTPUTLEN>000002</OUTPUTLEN>
+    <VALEXI>X</VALEXI>
+    <DDTEXT>Indicator Type</DDTEXT>
+    <DOMMASTER>E</DOMMASTER>
+   </DD01V>
+   <DD07V_TAB>
+    <DD07V>
+     <DOMNAME>ZINDTYPE</DOMNAME>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>01</DOMVALUE_L>
+     <DDTEXT>ITBIS Facturado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZINDTYPE</DOMNAME>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>02</DOMVALUE_L>
+     <DDTEXT>ITBIS retenido al proveedor.</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZINDTYPE</DOMNAME>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>03</DOMVALUE_L>
+     <DDTEXT>Porción de ITBIS llevado a proporcionalidad.</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZINDTYPE</DOMNAME>
+     <VALPOS>0004</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>04</DOMVALUE_L>
+     <DDTEXT>ITBIS que no es crédito fiscal y se capitaliza/costea.</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZINDTYPE</DOMNAME>
+     <VALPOS>0005</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>05</DOMVALUE_L>
+     <DDTEXT>ITBIS crédito fiscal pendiente de compensar.</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZINDTYPE</DOMNAME>
+     <VALPOS>0006</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>06</DOMVALUE_L>
+     <DDTEXT>ITBIS percibido (cobrado) por el proveedor según régimen.</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZINDTYPE</DOMNAME>
+     <VALPOS>0007</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>07</DOMVALUE_L>
+     <DDTEXT>ISC aplicado a ciertos bienes/servicios.</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZINDTYPE</DOMNAME>
+     <VALPOS>0008</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>08</DOMVALUE_L>
+     <DDTEXT>Otros</DDTEXT>
+    </DD07V>
+   </DD07V_TAB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

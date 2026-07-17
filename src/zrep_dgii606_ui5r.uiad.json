@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Rep. DGII 606",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Rep. DGII 606"
+  },
+  "ui5AppDetails": {
+    "appId": "rep606"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_AFB50BD2FA62B4E70B693D77BCB89F2FE05E0E6B_TM",
+    "semanticObject": "ZREP_DGII606",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_AFB50BD2FA62B4E70B693D77BCB89F2FE05E0E6B_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Rep. DGII 606"
+      }
+    }
+  ]
+}

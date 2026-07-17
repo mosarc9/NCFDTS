@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - Payment 606'
+define service ZSB_PAYMT606 {
+  expose ZT_C_PAYMT606 as Pay606;
+}

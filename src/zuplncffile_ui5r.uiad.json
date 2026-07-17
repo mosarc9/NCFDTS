@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Carga archivo rango NCF",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Carga archivo rango NCF"
+  },
+  "ui5AppDetails": {
+    "appId": "upload_ncf_file"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_BD947A4743156D583EAE8F330FCAE8E9FFE08F05_TM",
+    "semanticObject": "ZUPLNCFFILE",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_BD947A4743156D583EAE8F330FCAE8E9FFE08F05_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Carga archivo rango NCF"
+      }
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+@Metadata.layer: #CORE
+@UI:{
+        headerInfo: { typeName      : 'DGII 606 Item',
+                      typeNamePlural: 'DGII 606 Items',
+                      title         : { type: #STANDARD, label: 'Company Code', value: 'CompanyCode'},
+                      description   : { type: #STANDARD, label: 'Company'     ,value: '_Header.CompanyCodeName'}
+                     }
+     }
+annotate entity ZT_C_D606 with
+{
+  @UI.facet: [{ id: 'dgii'   , position: 10, label: 'Item', type: #IDENTIFICATION_REFERENCE }]
+  @UI: { lineItem      : [{ position: 10, importance: #HIGH}],
+         identification: [{ position: 10, importance: #HIGH }],
+         selectionField: [{ position: 10 }] }
+  @UI.hidden: true
+  CompanyCode;
+
+  @UI: { lineItem      : [{ position: 20, importance: #HIGH}],
+         identification: [{ position: 20, importance: #HIGH }],
+         selectionField: [{ position: 20 }] }
+  @UI.hidden: true
+  FiscalYear;
+
+  @UI: { lineItem      : [{ position: 30, importance: #HIGH}],
+         identification: [{ position: 30, importance: #HIGH }],
+         selectionField: [{ position: 30 }] }
+  AccountingDocument;
+
+  @UI: { lineItem      : [{ position: 40, importance: #HIGH}],
+         identification: [{ position: 40, importance: #HIGH }],
+         selectionField: [{ position: 50 }] }
+  Supplier;
+
+  @UI: { lineItem      : [{ position: 50, importance: #HIGH}],
+         identification: [{ position: 50, importance: #HIGH }],
+         selectionField: [{ position: 40 }] }
+  @EndUserText.label: 'Período Fiscal'
+  @UI.hidden: true
+  FMonth;
+
+  @UI: { lineItem      : [{ position: 60, importance: #HIGH}],
+         identification: [{ position: 60, importance: #HIGH }]}
+  @EndUserText.label: 'RNC/Cédula'
+  TaxNumber1;                       // RNC o Cédula Proveedor
+
+  @UI: { lineItem      : [{ position: 70, importance: #HIGH}],
+         identification: [{ position: 70, importance: #HIGH }]}
+  @EndUserText.label: 'Tipo de Identificacion'
+  Tipo_identificacion;              // Tipo identificacion
+
+  @UI: { lineItem      : [{ position: 80, importance: #HIGH}],
+         identification: [{ position: 80, importance: #HIGH }]}
+  @EndUserText.label: 'NCF'
+  NCF;                             // NCF ó Documento Modificado
+
+  @UI: { lineItem      : [{ position: 81, importance: #HIGH}],
+         identification: [{ position: 81, importance: #HIGH }]}
+  @EndUserText.label: 'Tipo de Bienes y Servicios Comprados'
+  dgiitype;                        // Tipo de Bienes y Servicios Comprados
+
+  @UI: { lineItem      : [{ position: 90, importance: #HIGH}],
+         identification: [{ position: 90, importance: #HIGH }]}
+  @EndUserText.label: 'NCF ó Documento Modificado'
+  NCFMod;
+
+  @UI: { lineItem      : [{ position: 100, importance: #HIGH}],
+         identification: [{ position: 100, importance: #HIGH }]}
+  DocumentDate;                    // Fecha Comprobante
+
+  @UI: { lineItem      : [{ position: 110, importance: #HIGH}],
+         identification: [{ position: 110, importance: #HIGH }]}
+  ClearingDate;                     // Fecha Pago
+
+  @UI: { lineItem      : [{ position: 120, importance: #MEDIUM}],
+         identification: [{ position: 120, importance: #MEDIUM }]}
+  @EndUserText.label: 'Monto Facturado en Servicios'
+  TotalServicio;                    // Monto Facturado en Servicios
+
+  @UI: { lineItem      : [{ position: 130, importance: #MEDIUM}],
+         identification: [{ position: 130, importance: #MEDIUM }]}
+  @EndUserText.label: 'Monto Facturado en Bienes'
+  TotalBien;
+
+  @UI: { lineItem      : [{ position: 140, importance: #MEDIUM}],
+         identification: [{ position: 140, importance: #MEDIUM }]}
+  @EndUserText.label: 'Total Monto Facturado'
+  TotalFacturado;
+
+  @UI: { lineItem      : [{ position: 150, importance: #MEDIUM}],
+         identification: [{ position: 150, importance: #MEDIUM }]}
+  @EndUserText.label: 'ITBIS Facturado'
+  ITBISFacturado;
+
+  @UI: { lineItem      : [{ position: 160, importance: #MEDIUM}],
+         identification: [{ position: 160, importance: #MEDIUM }]}
+  @EndUserText.label: 'ITBIS Retenido'
+  ITBISRetenido;
+
+  @UI: { lineItem      : [{ position: 170, importance: #MEDIUM}],
+         identification: [{ position: 170, importance: #MEDIUM }]}
+  @EndUserText.label: 'ITBIS sujeto a Proporcionalidad(Art.349)'
+  ITBISPropor;
+
+  @UI: { lineItem      : [{ position: 180, importance: #MEDIUM}],
+         identification: [{ position: 180, importance: #MEDIUM }]}
+  @EndUserText.label: 'ITBIS llevado al Costo'
+  ITBISCosto;
+
+  @UI: { lineItem      : [{ position: 190, importance: #MEDIUM}],
+         identification: [{ position: 190, importance: #MEDIUM }]}
+  @EndUserText.label: 'ITBIS por Adelantar'
+  ITBISporAdelantar;
+
+  @UI: { lineItem      : [{ position: 200, importance: #MEDIUM}],
+         identification: [{ position: 200, importance: #MEDIUM }]}
+  @EndUserText.label: 'ITBIS percibido en compras'
+  ITBISPercCompras;
+
+  @UI: { lineItem      : [{ position: 201, importance: #LOW}],
+         identification: [{ position: 202, importance: #LOW }]}
+  @EndUserText.label: 'Tipo de Retención en ISR'
+  tipoIsr;
+
+  @UI: { lineItem      : [{ position: 210, importance: #MEDIUM}],
+         identification: [{ position: 210, importance: #MEDIUM }]}
+  @EndUserText.label: 'Monto Retención Renta'
+  MontoRetRenta;
+
+  @UI: { lineItem      : [{ position: 220, importance: #MEDIUM}],
+         identification: [{ position: 220, importance: #MEDIUM }]}
+  @EndUserText.label: 'ISR Percibido en compras'
+  ISRRenta;
+
+  @UI: { lineItem      : [{ position: 230, importance: #MEDIUM}],
+         identification: [{ position: 230, importance: #MEDIUM }]}
+  @EndUserText.label: 'Impuesto Selectivo al Consumo'
+  MontoISC;
+
+  @UI: { lineItem      : [{ position: 240, importance: #MEDIUM}],
+         identification: [{ position: 240, importance: #MEDIUM }]}
+  @EndUserText.label: 'Otros Impuestos/Tasas'
+  Otros;
+
+  @UI: { lineItem      : [{ position: 250, importance: #MEDIUM}],
+         identification: [{ position: 250, importance: #MEDIUM }]}
+  @EndUserText.label: 'Monto Propina Legal'
+  mPropinaLegal;
+
+  @UI: { lineItem      : [{ position: 260, importance: #MEDIUM}],
+         identification: [{ position: 260, importance: #MEDIUM }]}
+  @EndUserText.label: 'Forma de Pago'
+  paymt;
+
+  @UI.hidden: true
+  CompanyCodeCurrency;
+  //  /* Associations */
+  //  _Gs;
+  //  _Header;
+  //  _Tax;
+
+}

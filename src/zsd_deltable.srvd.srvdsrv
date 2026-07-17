@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Definition - Del Table NCF/RCN'
+@AbapCatalog.extensibility.extensible: true
+define service ZSD_DELTABLE
+  provider contracts odata_v4_webapi {
+  expose ZT_R_DELTABLE as DelNcfRcn;
+}

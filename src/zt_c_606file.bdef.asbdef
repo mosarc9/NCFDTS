@@ -1,0 +1,21 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZT_C_606FILE alias e606file
+{
+  use create;
+  use update;
+  use delete;
+
+  use action downloadTxt;
+  use action validateyearID;
+  use action validateMonthID;
+  use action validatePeriodID;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+}

@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Relación de NCF/ RNC Electrónicos",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Relación de NCF/ RNC Electrónicos"
+  },
+  "ui5AppDetails": {
+    "appId": "ncf_data"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_43BD3EC255C961493C20117B49AC7DC185D2768B_TM",
+    "semanticObject": "ZNCFDATA",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_43BD3EC255C961493C20117B49AC7DC185D2768B_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Relación de NCF/ RNC Electrónicos"
+      }
+    }
+  ]
+}

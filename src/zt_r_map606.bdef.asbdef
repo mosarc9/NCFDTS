@@ -1,0 +1,49 @@
+managed implementation in class zbp_t_r_map606 unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZT_R_MAP606 alias map606
+persistent table zmap_606
+draft table zmap_606_d
+lock master
+total etag LastChangedAt
+etag master LocalLastChangedAt
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly, numbering : managed ) Uuid;
+  field (mandatory) Dgiitype, Saknr, Gdsserv;
+
+
+  validation ValidSaknr    on save { create; field Saknr; }
+  validation ValidDgiiType on save { create; field Dgiitype; }
+  validation ValidGdsServ  on save { create; field Gdsserv; }
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume with additional implementation;
+
+  draft determine action Prepare
+  {
+    validation ValidSaknr;
+    validation ValidDgiiType;
+    validation ValidGdsServ;
+  }
+
+  mapping for zmap_606
+    {
+      Uuid               = uuid;
+      Saknr              = saknr;
+      Dgiitype           = dgiitype;
+      Gdsserv            = gdsserv;
+      LocalCreatedBy     = local_created_by;
+      LocalCreatedAt     = local_created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+}

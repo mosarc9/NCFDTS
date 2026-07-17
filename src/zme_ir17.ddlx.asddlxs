@@ -1,0 +1,63 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo: {
+  typeName: 'Linea IR-17',
+  typeNamePlural: 'Decl. y/o Pago de Ret. y Retrib. Compl.'
+  --title: { value: 'concepto_ret' }
+}
+annotate entity ZCE_IR17
+    with 
+{
+  // --- Columnas de la tabla (visibles) ---
+  @UI.lineItem: [{ position: 10, label: 'No', type: #STANDARD }]
+  linea;
+
+  @UI.lineItem: [{ position: 20, label: 'Concepto' }]
+  concepto_izq;
+
+  @UI.lineItem: [{ position: 30, label: 'Valor' }]
+  valor_izq;
+
+  @UI.lineItem: [{ position: 40, label: 'No.' }]
+  no_ret;
+
+  @UI.lineItem: [{ position: 50, label: 'Concepto Retencion' }]
+  concepto_ret;
+
+  @UI.lineItem: [{ position: 60, label: 'Monto' }]
+  monto;
+
+  @UI.lineItem: [{ position: 70, label: 'Tasa' }]
+  tasa;
+
+  @UI.lineItem: [{ position: 80, label: 'Importe' }]
+  importe;
+  
+  // --- Link "Generar IR-17" (solo aparece con texto en la ultima fila) ---
+  @UI.lineItem: [{ position: 90, label: 'PDF', type: #WITH_URL, url: 'pdf_url' }]
+  pdf_link;
+  
+  @UI.selectionField: [{ position: 10 }]
+  p_bukrs;
+    
+  // --- Filtros en la barra de seleccion (sin @UI.lineItem = no aparecen como columnas) ---
+  @UI.selectionField: [{ position: 20 }]
+  p_periodo;
+
+  @UI.selectionField: [{ position: 30 }]
+  p_tipo_declaracion;
+  
+  @UI.selectionField: [{ position: 40 }]
+  p_fecha_limite;
+
+  @UI.selectionField: [{ position: 50 }]
+  p_premios;
+
+  @UI.selectionField: [{ position: 60 }]
+  p_tasa_premios;
+
+  @UI.selectionField: [{ position: 70 }]
+  p_ret_complementarias;
+
+  //@UI.selectionField: [{ position: 60 }]
+  //p_tasa_ret_compl;
+}

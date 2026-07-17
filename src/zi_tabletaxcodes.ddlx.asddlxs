@@ -1,0 +1,49 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TableTaxCodes', 
+    typeNamePlural: 'TableTaxCodess', 
+    title: {
+      type: #STANDARD, 
+      label: 'Table - Tax Codes', 
+      value: 'TaxCode'
+    }
+  }
+}
+annotate view ZI_TableTaxCodes with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TableTaxCodes', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Table - Tax Codes', 
+    position: 1 
+  } ]
+  TaxCode;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'TipoTasa'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'TipoTasa'
+  } ]
+  TipoTasa;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Description'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Description'
+  } ]
+  Description;
+}

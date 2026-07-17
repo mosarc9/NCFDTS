@@ -1,0 +1,58 @@
+@Metadata.layer: #CORE
+
+@UI:{ headerInfo: {
+                    typeName: 'Mapping 606',
+                    typeNamePlural: 'Mapping 606'}
+     }
+annotate entity ZT_C_MAP606 with
+{
+  @UI.facet: [{id: 'Map',
+               position: 10,
+               label: 'Mapping 606',
+               type: #IDENTIFICATION_REFERENCE}]
+
+  @UI.hidden: true
+  Uuid;
+
+  @UI: { lineItem: [{ position: 10, importance:  #HIGH}],
+         identification: [{ position: 10 }],
+         selectionField: [{ position: 10 }]  }
+  Saknr;
+
+  @UI: { lineItem: [{ position: 20, importance:  #HIGH}],
+         identification: [{ position: 20 }],
+         selectionField: [{ position: 20 }]  }
+  Dgiitype;
+
+  @UI.hidden: true
+  Descr;
+
+  @UI: { lineItem: [{ position: 30, importance:  #HIGH}],
+         identification: [{ position: 30 }],
+         selectionField: [{ position: 30 }]  }
+  Gdsserv;
+
+  @UI.hidden: true
+  Description;
+
+  @UI.hidden: true
+  LocalCreatedBy;
+
+  @UI.hidden: true
+  LocalCreatedAt;
+
+  @UI.hidden: true
+  LocalLastChangedBy;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  /* Associations */
+  //    _AccountText;
+  //    _Dgii;
+  //    _GdsServ;
+
+}

@@ -1,0 +1,87 @@
+@Metadata.layer: #CORE
+
+@UI:{ headerInfo: {
+                    typeName: 'NCF Configuration',
+                    typeNamePlural: 'NCF Configuration'
+//                   ,title: {
+//                            type: #STANDARD,
+//                            label: '',
+//                            value: ''},
+//                   description: {
+//                            type: #STANDARD,
+//                            label: '',
+//                             value: ''}
+                  }
+     }
+annotate entity ZT_C_CONF_NCF with
+{
+  @UI.facet: [{id: 'Conf',
+              position: 10,
+              label: 'NCF Configuration',
+              type: #IDENTIFICATION_REFERENCE}]
+              
+  @UI.hidden: true
+  IdUuid;
+  
+  @UI: { lineItem: [{  position:  10, importance:  #HIGH}],
+       identification: [{ position: 10 }],
+       selectionField: [{ position: 10 }] }
+  Bukrs;
+  
+  @UI.hidden: true
+  CompanyCodeName;
+  
+  @UI: { lineItem: [{  position:  20, importance:  #HIGH}],
+       identification: [{ position: 20 }],
+       selectionField: [{ position: 20 }] }
+  Plant;
+  
+  @UI.hidden: true
+  PlantName;
+
+  @UI: { lineItem: [{  position:  30, importance:  #HIGH}],
+       identification: [{ position: 30 }],
+       selectionField: [{ position: 30 }] }
+  ClDoc;
+
+//  @UI.hidden: true
+//  billingdocumenttypename;
+
+  @UI: { lineItem: [{  position:  40, importance:  #HIGH}],
+       identification: [{ position: 40 }],
+       selectionField: [{ position: 40 }] }
+  Modulo;
+
+  @UI: { lineItem: [{  position:  50, importance:  #HIGH}],
+       identification: [{ position: 50 }],
+       selectionField: [{ position: 50 }] }
+  Stcdc;
+  
+  @UI: { lineItem: [{  position:  60, importance:  #HIGH}],
+       identification: [{ position: 60 }],
+       selectionField: [{ position: 60 }] }
+  Serie;
+
+  @UI: { lineItem: [{  position:  70, importance:  #HIGH}],
+       identification: [{ position: 70 }] }
+  Znrnr;
+
+  @UI: { lineItem: [{  position:  80, importance:  #MEDIUM}],
+       identification: [{ position: 80 }] }
+  IsDpp;
+
+  @UI.hidden: true
+  LocalCreatedBy;
+  @UI.hidden: true
+  LocalCreatedAt;
+  @UI.hidden: true
+  LocalLastChangedBy;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  @UI.hidden: true
+  LastChangedAt;
+  /* Associations */
+  //    _CompanyCode;
+  //    _DocType;element_name;
+
+}

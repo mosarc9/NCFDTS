@@ -1,0 +1,50 @@
+unmanaged implementation in class zbp_t_r_txtfile unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZT_R_TXTFILE alias txtfile
+//persistent table ztxtfile
+draft table ztxtfile_d
+
+lock master
+total etag LastChangedAt
+etag master LocalLastChangedAt
+
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update ( features : instance );
+  delete;
+
+  field ( readonly, numbering : managed ) Id;
+  field ( readonly )  LocalCreatedAt, LocalCreatedBy, LocalLastChangedAt, LocalLastChangedBy, LastChangedAt;
+//  field ( mandatory ) Filename;
+
+  validation validateFileName on save { create; field Filename; }
+
+  determination getDataFile on save { field Filename; }
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume with additional implementation;
+
+  draft determine action Prepare
+  {
+    validation validateFileName;
+  }
+
+  mapping for ztxtfile
+    {
+      Id                 = id;
+      Attachment         = attachment;
+      Filename           = filename;
+      Mimetype           = mimetype;
+      LocalCreatedBy     = local_created_by;
+      LocalCreatedAt     = local_created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+}

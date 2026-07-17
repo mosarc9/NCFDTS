@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - DGII Type'
+define service ZSD_DGII_TYPE {
+  expose ZT_C_DGII_TYPE as dgiiType;
+}

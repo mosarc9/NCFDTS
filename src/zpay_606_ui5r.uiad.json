@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Forma de Pago",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Forma de Pago"
+  },
+  "ui5AppDetails": {
+    "appId": "pay_606"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_A28001D4A4709F2F92B76B27DE6473AA9B982A6F_TM",
+    "semanticObject": "ZPAY_606",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_A28001D4A4709F2F92B76B27DE6473AA9B982A6F_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Forma de Pago"
+      }
+    }
+  ]
+}

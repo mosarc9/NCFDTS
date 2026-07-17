@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_TableTaxCodes_S'
+define service ZUI_TABLETAXCODES {
+  expose ZI_TABLETAXCODES_S as TableTaxCodesAll;
+  expose ZI_TABLETAXCODES as TableTaxCodes;
+}

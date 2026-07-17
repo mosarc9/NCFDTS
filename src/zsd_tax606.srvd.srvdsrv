@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - Tax 606'
+define service Zsd_tax606 {
+  expose ZT_C_TAX606 as Tax606;
+}

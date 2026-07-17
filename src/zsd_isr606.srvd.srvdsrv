@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - ISR 606'
+define service ZSD_ISR606 {
+  expose ZT_C_ISR606 as ISR606;
+}

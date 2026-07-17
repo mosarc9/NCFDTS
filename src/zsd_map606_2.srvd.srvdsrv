@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - Map 606'
+define service ZSD_MAP606_2 {
+  expose ZT_C_MAP606 as mapp606;
+}

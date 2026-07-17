@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZCM_NCF_V2</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>NCF Message Class 2</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Range &amp;1 not found</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Range &amp;1 inactive or not configured</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Supplier has an assigned NCF range. Use a different document type.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Range validator &amp;1 not found</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Invalid fiscal receipt</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Fiscal receipt duplicated in document Nº &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Fiscal receipt not assigned to Tax ID (RNC) &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Fiscal receipt exhausted for Tax ID (RNC) &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Fiscal receipt expired</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Generated NCF number is invalid. It is not within the assigned range!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Company code or document type not defined in configuration</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Invalid national ID (Cédula) format!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Use a different document type for foreign suppliers!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Tax ID (RNC/National ID) is already registered in the system and is block</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Tax ID (RNC) not registered with DGII. Please verify.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Invalid “Tax Identifier” field</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>“Tax Identifier” field does not allow alphanumeric characters</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Invalid NCF in return order from the legacy system. Please correct!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Invalid NCF date!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>&amp;1 remaining until total exhaustion of NCF range &amp;2!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_NCF_V2</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>&amp;1</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

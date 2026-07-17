@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - Map Tax Codes'
+define service ZSD_MAPTC {
+  expose ZI_C_MAPTC as maptc;
+}

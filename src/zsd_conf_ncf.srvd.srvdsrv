@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - Conf. NCF'
+define service ZSD_CONF_NCF {
+  expose ZT_C_CONF_NCF as ConfNCF;
+}

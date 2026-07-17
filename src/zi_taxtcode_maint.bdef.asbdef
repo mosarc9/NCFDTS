@@ -1,0 +1,31 @@
+managed implementation in class zbp_i_taxtcode_maint unique;
+strict ( 2 );
+with draft;                                    //AÑADIR
+
+define behavior for ZI_TAXTCODE_MAINT alias TaxCode
+persistent table ztab_tc
+draft table ztab_tc_d                         // ← ⚠️ AÑADIR (crear tabla draft)
+lock master total etag last_changed_at        // ← ⚠️ MODIFICAR
+authorization master ( global )
+etag master last_changed_at
+{
+  create;
+  update;
+  delete;
+
+  draft action Edit;                           //← ⚠️ AÑADIR
+  draft action Activate optimized;            // ← ⚠️ AÑADIR
+  draft action Discard;                       // ← ⚠️ AÑADIR
+  draft action Resume;                        // ← ⚠️ AÑADIR
+  draft determine action Prepare;             // ← ⚠️ AÑADIR
+
+  field ( readonly : update ) tax_code;
+  field ( readonly ) last_changed_at;
+
+  mapping for ztab_tc
+  {
+    tax_code        = tax_code;
+    itbis_rate      = itbis_rate;
+    last_changed_at = last_changed_at;
+  }
+}

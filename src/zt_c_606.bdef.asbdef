@@ -1,0 +1,16 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for zt_c_606 alias map606
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+}

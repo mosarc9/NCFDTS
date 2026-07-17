@@ -1,0 +1,49 @@
+managed implementation in class zbp_t_r_dgii_type unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZT_R_DGII_TYPE alias dgiitype
+persistent table zdgii_type
+draft table zdgii_type_d
+lock master
+total etag LastChangedAt
+etag master LocalLastChangedAt
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly, numbering : managed ) Uuid;
+  //  field ( readonly ) Dgiitype;
+//  field ( mandatory ) Dgiitype, Descr;
+  field( readonly : update ) Dgiitype;
+
+  determination setDGIIType on save { create; }
+
+  validation dgiitype on save { create; field Dgiitype; }
+  validation validDescr on save { create; field Descr; }
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume with additional implementation;
+
+  draft determine action Prepare
+  {
+    validation dgiitype;
+    validation validDescr;
+  }
+
+  mapping for zdgii_type
+    {
+      Uuid               = uuid;
+      Dgiitype           = dgiitype;
+      Descr              = descr;
+      LocalCreatedBy     = local_created_by;
+      LocalCreatedAt     = local_created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+}

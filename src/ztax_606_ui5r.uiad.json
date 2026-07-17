@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Determinación de impuestos",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Determinación de impuestos"
+  },
+  "ui5AppDetails": {
+    "appId": "tax_606"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_3BFDB605EC8359342D8841BD70AA58A3C9F40EC1_TM",
+    "semanticObject": "ZTAX_606",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_3BFDB605EC8359342D8841BD70AA58A3C9F40EC1_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Determinación de impuestos"
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+@Metadata.layer: #CORE
+
+@UI:{ headerInfo: {
+                    typeName: 'NCF Assignment',
+                    typeNamePlural: 'NCF Assignment'}
+     }
+annotate entity ZT_C_FIRNCNCF with
+{
+  @UI.facet: [{id: 'Conf',
+              position: 10,
+              label: 'NCF Assignment',
+              type: #IDENTIFICATION_REFERENCE}]
+
+  @UI.hidden: true
+  IdUuid;
+
+  @UI: { lineItem: [{  position:  10, importance:  #HIGH}],
+//                    {  type: #FOR_ACTION, dataAction: 'uploadTxt', label: 'Upload Txt', position: 10 }],
+         identification: [{ position: 10 }],
+         selectionField: [{ position: 10 }] }
+  Rcn;
+
+  @UI: { lineItem: [{  position:  20, importance:  #HIGH}],
+     identification: [{ position: 20 }] }
+  NombreComercial;
+
+  @UI: { lineItem: [{  position:  30, importance:  #HIGH}],
+     identification: [{ position: 30 }],
+     selectionField: [{ position: 30 }] }
+  Prefijo;
+
+  @UI: { lineItem: [{  position:  40, importance:  #HIGH}],
+     identification: [{ position: 40 }],
+     selectionField: [{ position: 40 }] }
+  ValidoHasta;
+
+  @UI: { lineItem: [{  position:  50, importance:  #HIGH}],
+     identification: [{ position: 50 }] }
+  Ncfini;
+
+  @UI: { lineItem: [{  position:  60, importance:  #HIGH}],
+     identification: [{ position: 60 }] }
+  Ncffin;
+
+  @UI.hidden: true
+  LocalCreatedBy;
+  @UI.hidden: true
+  LocalCreatedAt;
+  @UI.hidden: true
+  LocalLastChangedBy;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  @UI.hidden: true
+  LastChangedAt;
+
+}

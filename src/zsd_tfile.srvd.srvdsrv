@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition - Txt File'
+@AbapCatalog.extensibility.extensible: true
+define service ZSD_TFILE {
+  expose ZT_C_TXTFILE as tfile;
+}

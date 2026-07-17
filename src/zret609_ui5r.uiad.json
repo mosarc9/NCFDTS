@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Reporte de Retenciones (609)",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Reporte de Retenciones (609)"
+  },
+  "ui5AppDetails": {
+    "appId": "zret609"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_4A1A9DDFBBB8DEB04B449290F0536B94B70C61DA_TM",
+    "semanticObject": "ZRet609",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_4A1A9DDFBBB8DEB04B449290F0536B94B70C61DA_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Reporte de Retenciones (609)"
+      }
+    }
+  ]
+}
