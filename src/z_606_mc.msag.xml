@@ -122,6 +122,12 @@
      <MSGNR>019</MSGNR>
      <TEXT>Fiscal Year and Posting Period already registered</TEXT>
     </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>Z_606_MC</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Enter a Company Code</TEXT>
+    </T100>
    </T100>
   </asx:values>
  </asx:abap>

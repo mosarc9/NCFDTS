@@ -7,6 +7,9 @@ define root view entity ZT_C_606FILE
   as projection on ZT_R_606FILE
 {
   key Uuid,
+  @Consumption.valueHelpDefinition: [{ entity          : { name   : 'I_CompanyCodeStdVH', element: 'CompanyCode' },
+                                       useForValidation: true }]
+  Bukrs,
   @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CalendarYear', element: 'CalendarYear' }  }]
   Gjahr,
   @Consumption.filter: { multipleSelections: false }

@@ -21,12 +21,14 @@ authorization master ( instance )
   field ( readonly ) Filename, Mimetype, LocalCreatedAt, LocalCreatedBy, LocalLastChangedAt, LocalLastChangedBy, LastChangedAt;
 //////  field ( mandatory ) Gjahr, Monat;
 
+  validation validateBukrs on save { create; field Bukrs; }
   validation validateYear on save { create; field Gjahr; }
   validation validateMonth on save { create; field Monat; }
-  validation validatePeriod on save { create; field Gjahr, Monat; }
+  validation validatePeriod on save { create; field  Gjahr, Monat; }
 
   action ( features : instance, authorization : update ) downloadTxt result [1] $self;
 
+  determine action validateBukrsID  { validation validateBukrs; }
   determine action validateyearID   { validation validateYear; }
   determine action validateMonthID  { validation validateMonth; }
   determine action validatePeriodID { validation validatePeriod; }
@@ -45,6 +47,7 @@ authorization master ( instance )
 
   draft determine action Prepare
   {
+    validation validateBukrs;
     validation validateYear;
     validation validateMonth;
     validation validatePeriod;
@@ -53,6 +56,7 @@ authorization master ( instance )
   mapping for z606file
     {
       Uuid               = uuid;
+      Bukrs              = bukrs;
       Gjahr              = gjahr;
       Monat              = monat;
       Attachment         = attachment;

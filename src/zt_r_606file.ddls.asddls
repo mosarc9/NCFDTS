@@ -6,6 +6,7 @@ define root view entity ZT_R_606FILE
 
 {
   key uuid                  as Uuid,
+      bukrs                 as Bukrs,
       gjahr                 as Gjahr,
       monat                 as Monat,
       @Semantics.largeObject: { mimeType: 'Mimetype',

@@ -6,6 +6,7 @@ define root view entity ZT_I_606FILE
   as projection on ZT_R_606FILE
 {
   key Uuid,
+      Bukrs,
       Gjahr,
       Monat,
       Attachment,

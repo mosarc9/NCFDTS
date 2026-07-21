@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Formato 606",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Formato 606"
+  },
+  "ui5AppDetails": {
+    "appId": "formato606"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_DEABAED3A6DBDCEAEA7C27A50F45C4C04808FCE6_TM",
+    "semanticObject": "ZFORMATO606",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_DEABAED3A6DBDCEAEA7C27A50F45C4C04808FCE6_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Formato 606"
+      }
+    }
+  ]
+}
