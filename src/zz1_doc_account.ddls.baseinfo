@@ -3,7 +3,8 @@
 {
 "FROM":
 [
-"ZZ1_TYPE_GS_I"
+"I_JOURNALENTRYITEM",
+"ZZ1_REP_606"
 ],
 "ASSOCIATED":
 [],

@@ -139,10 +139,11 @@ CLASS lhc_e606file IMPLEMENTATION.
             DATA(lv_montoisc)        = COND string( WHEN ldet-montoisc > 0        THEN | { ldet-montoisc DECIMALS = 2 }|        ELSE || ).
             DATA(lv_otros)           = COND string( WHEN ldet-otros > 0           THEN | { ldet-otros DECIMALS = 2 }|           ELSE || ).
             DATA(lv_mpropinalegal)   = COND string( WHEN ldet-mpropinalegal > 0   THEN | { ldet-mpropinalegal DECIMALS = 2 }|   ELSE || ).
+            DATA(lv_clearingdate)    = COND string( WHEN ldet-clearingdate IS NOT INITIAL  THEN |{ ldet-ClearingDate }|   ELSE || ).
 
             " Concatenamos la línea del detalle
             lv_csv &&= |{ ldet-taxnumber1 }\|{ ldet-tipo_identificacion }\|{ ldet-dgiitype }\|{ ldet-ncf }\|| &&
-                       |{ ldet-ncfmod }\|{ ldet-documentdate }\|{ ldet-clearingdate }\|{ lv_totalservicio }\|| &&
+                       |{ ldet-ncfmod }\|{ ldet-documentdate }\|{ lv_clearingdate }\|{ lv_totalservicio }\|| &&
                        |{ lv_totalbien }\|{ lv_totalfacturado }\|{ lv_itbisfacturado }\|{ lv_itbisretenido }\|| &&
                        |{ lv_itbispropor }\|{ lv_itbiscosto }\|{ lv_itbisporadelan }\|{ lv_itbisperccom }\|| &&
                        |{ ldet-tipoisr }\|{ lv_montoretrenta }\|{ lv_isrrenta }\|{ lv_montoisc }\|| &&

@@ -53,6 +53,7 @@ define view entity ZT_I_D606
       _Gs,
       _Header : redirected to parent ZT_I_H606,
       _Tax,
-      _TypeGS,
+      _TypeG,
+      _TypeS,
       _IsrType
 }

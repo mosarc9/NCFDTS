@@ -149,9 +149,7 @@ CLASS lhc_map606 IMPLEMENTATION.
                                                    severity = if_abap_behv_message=>severity-error )
                        %element-saknr = if_abap_behv=>mk-on ) TO reported-map606.
 
-      ELSEIF NOT line_exists( valid_saknr2[ glaccount = map606-saknr ] ).
-
-
+*      ELSEIF NOT line_exists( valid_saknr2[ glaccount = map606-saknr ] ).
 *        APPEND VALUE #( %tky      = map606-%tky
 *                      %state_area = 'VALIDATE_SAKNR'
 *                      %msg        =  new_message( id       = 'Z_606_MC'
@@ -162,7 +160,7 @@ CLASS lhc_map606 IMPLEMENTATION.
 
       ELSEIF line_exists( valid_saknr[ saknr = map606-saknr ] ).
 
-
+        APPEND VALUE #( %tky = map606-%tky ) TO failed-map606.
 
         APPEND VALUE #( %tky        = map606-%tky
                         %state_area = 'VALIDATE_SAKNR'

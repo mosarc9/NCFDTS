@@ -68,6 +68,7 @@ CLASS lhc_zt_r_paymt606 IMPLEMENTATION.
                        %element-paykey = if_abap_behv=>mk-on ) TO reported-pay606.
 
       ELSEIF NOT line_exists( valid_taxcode2[ PaymentMethod = pay606-Paykey ] ).
+        APPEND VALUE #( %tky      = pay606-%tky ) TO failed-pay606.
         APPEND VALUE #( %tky      = pay606-%tky
                       %state_area = 'VALIDATE_PAYKEY'
                       %msg        =  new_message( id       = 'Z_606_MC'
@@ -77,7 +78,7 @@ CLASS lhc_zt_r_paymt606 IMPLEMENTATION.
                       %element-paykey = if_abap_behv=>mk-on ) TO reported-pay606.
 
       ELSEIF line_exists( valid_taxcode[ paykey = pay606-Paykey ] ).
-
+        APPEND VALUE #( %tky        = pay606-%tky ) TO failed-pay606.
         APPEND VALUE #( %tky        = pay606-%tky
                         %state_area = 'VALIDATE_PAYKEY'
                         %msg        =  new_message( id       = 'Z_606_MC'

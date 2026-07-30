@@ -22,23 +22,16 @@ CLASS lcl_je_created_handler IMPLEMENTATION.
     DATA lv_doc   TYPE belnr_d.
     DATA lv_bukrs TYPE bukrs.
     DATA lv_gjahr TYPE gjahr.
-    DATA lv_cldoc TYPE zcl_doc.
     DATA iv_object TYPE cl_numberrange_intervals=>nr_object.
     DATA lv_b TYPE n LENGTH 8.
     DATA lv_e TYPE n LENGTH 10.
 
 
-    SELECT FROM i_journalentry AS a INNER JOIN i_journalentryitem AS b ON a~accountingdocument = b~accountingdocument AND
+    SELECT FROM i_journalentry AS a INNER JOIN @created AS b ON a~accountingdocument = b~accountingdocument AND
                                                                 a~companycode = b~companycode AND
                                                                 a~fiscalyear  = b~fiscalyear
-                                    INNER JOIN @created AS c ON a~accountingdocument = c~accountingdocument AND
-                                                                a~companycode = c~companycode AND
-                                                                a~fiscalyear  = c~fiscalyear
     FIELDS
-    a~companycode, a~fiscalyear, a~accountingdocument, a~accountingdocumenttype,
-    a~documentdate, b~financialaccounttype, b~supplier
-    WHERE
-    b~supplier IS NOT INITIAL
+    a~companycode, a~fiscalyear, a~accountingdocument, a~accountingdocumenttype, a~documentdate
     INTO TABLE @DATA(lt_data).
 
 
@@ -64,8 +57,6 @@ CLASS lcl_je_created_handler IMPLEMENTATION.
                                   fiscalyear  = ls_event-fiscalyear
                                   accountingdocument = ls_event-accountingdocument ].
 
-        CHECK ls_data-financialaccounttype EQ 'K'. "Verificar que sea documento de proveedor
-        CHECK ls_data-companycode EQ '5000'.
 
         lv_doc   = ls_event-accountingdocument.
         lv_bukrs = ls_event-companycode.
@@ -107,9 +98,8 @@ CLASS lcl_je_created_handler IMPLEMENTATION.
 
                   lv_ncf = |{ ls_config-serie }| & |{ ls_config-znrnr }| & |{ lv_e }|.
                 WHEN OTHERS.
-                  RETURN.
+                  CONTINUE.
               ENDCASE.
-*              lv_ncf = |{ ls_config-serie }| & |{ ls_config-znrnr }| & |{ lv_number }|.
 
 
             CATCH cx_nr_object_not_found INTO DATA(lx_obj1).
@@ -126,9 +116,6 @@ CLASS lcl_je_created_handler IMPLEMENTATION.
           CONTINUE.
         ENDIF.
 
-        " Llamar I_JournalEntryTP~Change
-*        DATA lt_je TYPE TABLE FOR ACTION IMPORT
-*                        i_journalentrytp~change.
 
         APPEND INITIAL LINE TO lt_je
           ASSIGNING FIELD-SYMBOL(<je>).
@@ -150,33 +137,6 @@ CLASS lcl_je_created_handler IMPLEMENTATION.
           FAILED   DATA(lt_failed)
           REPORTED DATA(lt_reported)
           MAPPED   DATA(lt_mapped).
-
-        " Log en tabla Z
-        IF lt_failed IS INITIAL.
-
-          INSERT zpending_ncf FROM @( VALUE zpending_ncf(
-            client              = sy-mandt
-            accounting_document = lv_doc
-            company_code        = lv_bukrs
-            fiscal_year         = lv_gjahr
-            vendor              = ls_data-supplier
-            ncf                 = lv_ncf
-            status              = 'D'
-            created_at          = cl_abap_context_info=>get_system_date( )
-            created_by          = cl_abap_context_info=>get_user_alias( )
-          ) ).
-        ELSE.
-          INSERT zpending_ncf FROM @( VALUE zpending_ncf(
-            client              = sy-mandt
-            accounting_document = lv_doc
-            company_code        = lv_bukrs
-            fiscal_year         = lv_gjahr
-            vendor              = ls_data-supplier
-            status              = 'E'
-            created_at          = cl_abap_context_info=>get_system_date( )
-            created_by          = cl_abap_context_info=>get_user_alias( )
-          ) ).
-        ENDIF.
 
       ENDIF.
 

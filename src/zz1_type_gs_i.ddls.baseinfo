@@ -3,7 +3,8 @@
 {
 "FROM":
 [
-"ZZ1_TYPE_GS_I"
+"ZZ1_DOC_ACCOUNT",
+"ZZ1_MAP606"
 ],
 "ASSOCIATED":
 [],

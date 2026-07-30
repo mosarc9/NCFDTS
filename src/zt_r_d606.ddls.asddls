@@ -29,9 +29,14 @@ define view entity ZT_R_D606
 
   association [0..1] to zpaymt_606          as _Pay      on  Sc.PaymentMethodsList = _Pay.paykey
 
-  association [0..1] to ZZ1_TYPE_GS         as _TypeGS   on  $projection.CompanyCode        = _TypeGS.CompanyCode
-                                                         and $projection.FiscalYear         = _TypeGS.FiscalYear
-                                                         and $projection.AccountingDocument = _TypeGS.AccountingDocument
+  association [0..1] to ZZ1_TYPE_GS         as _TypeG    on  $projection.CompanyCode        = _TypeG.CompanyCode
+                                                         and $projection.FiscalYear         = _TypeG.FiscalYear
+                                                         and $projection.AccountingDocument = _TypeG.AccountingDocument
+                                                         and _TypeG.Gdsserv                 = '1' --Bien
+  association [0..1] to ZZ1_TYPE_GS         as _TypeS    on  $projection.CompanyCode        = _TypeS.CompanyCode
+                                                         and $projection.FiscalYear         = _TypeS.FiscalYear
+                                                         and $projection.AccountingDocument = _TypeS.AccountingDocument
+                                                         and _TypeS.Gdsserv                 = '2' --Servicio
   association [0..1] to ZZ1_TYPE_ISR        as _IsrType  on  $projection.CompanyCode        = _IsrType.CompanyCode
                                                          and $projection.FiscalYear         = _IsrType.FiscalYear
                                                          and $projection.AccountingDocument = _IsrType.AccountingDocument
@@ -49,8 +54,13 @@ define view entity ZT_R_D606
       end                                                                                        as Tipo_identificacion, // Tipo identificacion
       a.AccountingDocumentHeaderText                                                             as NCF, // NCF
       case
-        when _TypeGS.dgiitype is null then cast( '00' as abap.numc( 2 ) )
-        else cast( _TypeGS.dgiitype as abap.numc( 2 ) )
+        when ( coalesce( _Gs.totalBien,     cast( 0 as abap.curr(23,2) ) ) = 0
+           and coalesce( _Gs.totalServicio, cast( 0 as abap.curr(23,2) ) ) = 0 )
+             then cast( '00' as abap.numc( 2 ) )
+        when coalesce( _Gs.totalBien,     cast( 0 as abap.curr(23,2) ) ) >=
+             coalesce( _Gs.totalServicio, cast( 0 as abap.curr(23,2) ) )
+             then cast( coalesce( _TypeG.Dgiitype, '00' ) as abap.numc( 2 ) )
+        else      cast( coalesce( _TypeS.Dgiitype, '00' ) as abap.numc( 2 ) )
       end                                                                                        as dgiitype,          // Tipo de Bienes y Servicios Comprados
       a.NCFMod,                                                                                                        // NCF ó Documento Modificado
       a.DocumentDate,                                                                                                  // Fecha Comprobante
@@ -113,6 +123,7 @@ define view entity ZT_R_D606
       //      _Jei,
       _Gs,
       _Tax,
-      _TypeGS,
+      _TypeG,
+      _TypeS,
       _IsrType
 }

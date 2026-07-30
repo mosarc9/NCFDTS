@@ -100,6 +100,7 @@ CLASS lhc_tax606 IMPLEMENTATION.
 
       ELSEIF NOT line_exists( valid_taxcode2[ TaxCode = tax606-taxcode ] ).
 *      ELSEIF NOT line_exists( valid_taxcode2[ WithholdingTaxCode = tax606-taxcode ] ).
+        APPEND VALUE #( %tky = tax606-%tky ) TO failed-tax606.
         APPEND VALUE #( %tky      = tax606-%tky
                       %state_area = 'VALIDATE_TAXCODE'
                       %msg        =  new_message( id       = 'Z_606_MC'
@@ -110,6 +111,7 @@ CLASS lhc_tax606 IMPLEMENTATION.
 
       ELSEIF line_exists( valid_taxcode[ taxcode = tax606-taxcode ] ).
 
+        APPEND VALUE #( %tky = tax606-%tky ) TO failed-tax606.
         APPEND VALUE #( %tky        = tax606-%tky
                         %state_area = 'VALIDATE_TAXCODE'
                         %msg        =  new_message( id       = 'Z_606_MC'

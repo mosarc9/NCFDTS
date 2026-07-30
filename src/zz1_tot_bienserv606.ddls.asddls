@@ -8,16 +8,14 @@ define view entity ZZ1_TOT_BIENSERV606
     inner join      ZZ1_JOURNALENTRY as Item  on  a.CompanyCode        = Item.CompanyCode
                                               and a.FiscalYear         = Item.FiscalYear
                                               and a.AccountingDocument = Item.AccountingDocument
-    left outer join ZZ1_MAP606       as Goods on  (
-        Item.cta3                                               = Goods.Saknr
-        or Item.cta4                                            = Goods.Saknr
-      )
-                                              and Goods.Gdsserv = '1'
-    left outer join ZZ1_MAP606       as Serv  on  (
-         Item.cta3                                             = Serv.Saknr
-         or Item.cta4                                          = Serv.Saknr
-       )
-                                              and Serv.Gdsserv = '2'
+    
+    left outer join ZZ1_MAP606 as Goods4 on Goods4.Saknr = Item.cta4 and Goods4.Gdsserv = '1'
+    
+    left outer join ZZ1_MAP606 as Goods3 on Goods3.Saknr = Item.cta3 and Goods3.Gdsserv = '1'
+    
+    left outer join ZZ1_MAP606 as Serv4 on Serv4.Saknr = Item.cta4 and Serv4.Gdsserv = '2'
+    
+    left outer join ZZ1_MAP606 as Serv3 on Serv3.Saknr = Item.cta3 and Serv3.Gdsserv = '2'
 {
   key a.CompanyCode,
   key a.FiscalYear,
@@ -25,16 +23,32 @@ define view entity ZZ1_TOT_BIENSERV606
 
 
       @Semantics.amount.currencyCode: 'CompanyCodeCurrency'
-      sum( case
-      when Goods.Saknr is not null and ( Goods.Saknr = Item.cta3 or Goods.Saknr = Item.cta4 ) then abs( Item.AmountInCompanyCodeCurrency )
-      else cast( 0 as abap.curr( 23, 2 ) )
-      end ) as totalBien,
+      sum(
+          case
+            when Goods4.Saknr is not null
+              then abs( Item.AmountInCompanyCodeCurrency )
+        
+            when Goods4.Saknr is null
+             and Goods3.Saknr is not null
+              then abs( Item.AmountInCompanyCodeCurrency )
+        
+            else cast( 0 as abap.curr(23,2) )
+          end
+    ) as totalBien,
 
       @Semantics.amount.currencyCode: 'CompanyCodeCurrency'
-      sum( case
-      when Serv.Saknr is not null and ( Serv.Saknr = Item.cta3 or Serv.Saknr = Item.cta4 ) then abs( Item.AmountInCompanyCodeCurrency )
-      else cast( 0 as abap.curr( 23, 2 ) )
-      end ) as totalServicio,
+      sum(
+          case
+            when Serv4.Saknr is not null
+              then abs( Item.AmountInCompanyCodeCurrency )
+        
+            when Serv4.Saknr is null
+             and Serv3.Saknr is not null
+              then abs( Item.AmountInCompanyCodeCurrency )
+        
+            else cast( 0 as abap.curr(23,2) )
+          end
+        ) as totalServicio,
       Item.CompanyCodeCurrency
 }
 where

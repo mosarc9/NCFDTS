@@ -19,3 +19,4 @@ define view entity ZZ1_JOURNALENTRY
 
 }
 where SourceLedger = '0L'
+and IsReversed <> 'X'
